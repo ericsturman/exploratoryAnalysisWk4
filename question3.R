@@ -15,9 +15,9 @@ newData <- data.frame(emmisionsBaltimore, yearBaltimore, typeBaltimore)
 
 aggDat<- aggregate(newData[,1], by=list(newData$yearBaltimore, newData$typeBaltimore), FUN=sum)
 
-#qplot(aggDat, aes(aggDat$x, aggDat$Group.1))
-
 plot <- qplot(data=aggDat, x=aggDat$Group.1, y=aggDat$x)
 plot <- plot + facet_grid(.~aggDat$Group.2)
 plot <- plot + xlab("Year")
 plot <- plot + ylab("Total Emmissions (tons)")
+
+ggsave("plot3.png", width=4, height=4)

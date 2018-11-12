@@ -23,3 +23,5 @@ aggDat<- aggregate(newData[,1], by=list(newData[,2]), FUN=sum)
 plot <- qplot(data=aggDat, x=aggDat$Group.1, y=aggDat$x)
 plot <- plot + xlab("Year")
 plot <- plot + ylab("Total Emmissions (tons)")
+
+ggsave("plot5.png", width=4, height=4)

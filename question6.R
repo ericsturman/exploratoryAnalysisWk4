@@ -26,3 +26,5 @@ plot <- qplot(data=aggDat, x=aggDat$Group.1, y=aggDat$x)
 plot <- plot + facet_grid(.~aggDat$city)
 plot <- plot + xlab("Year")
 plot <- plot + ylab("Total Emmissions (tons)")
+
+ggsave("plot6.png", width=4, height=4)
