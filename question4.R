@@ -3,7 +3,7 @@ library(ggplot2)
 FEI <- readRDS("./exdata%2Fdata%2FNEI_data/Source_Classification_Code.rds")
 SCC <- readRDS("./exdata%2Fdata%2FNEI_data/summarySCC_PM25.rds")
 
-rows<-grep("Coal|coal",names(table(FEI$Short.Name)))
+rows<-grep("coal",names(table(FEI$Short.Name)), ignore.case = TRUE)
 codes<-FEI[rows,1]
 
 emmisionsList <- as.numeric(SCC$Emissions)
